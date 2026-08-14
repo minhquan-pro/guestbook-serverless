@@ -50,4 +50,12 @@ jobs:
 
       - name: SAM Deploy
         working-directory: backend
-        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+        run: |
+          sam deploy \
+            --stack-name guestbook-serverless \
+            --region us-east-1 \
+            --capabilities CAPABILITY_IAM \
+            --resolve-s3 \
+            --no-confirm-changeset \
+            --no-fail-on-empty-changeset \
+            --tags Project=guestbook Env=prod

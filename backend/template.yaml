@@ -416,4 +416,3 @@ Outputs:
   AdminTopicArn:
     Description: SNS admin topic ARN
     Value: !Ref AdminTopic
-
