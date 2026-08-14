@@ -1,0 +1,28 @@
+{
+  "name": "guestbook-serverless-backend",
+  "version": "1.0.0",
+  "description": "Guestbook serverless backend - AWS SAM project with Lambda functions",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit/",
+    "test:property": "vitest run tests/property/",
+    "test:integration": "vitest run tests/integration/"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.700.0",
+    "@aws-sdk/client-sqs": "^3.700.0",
+    "@aws-sdk/client-ses": "^3.700.0",
+    "@aws-sdk/client-sns": "^3.700.0",
+    "@aws-sdk/client-ssm": "^3.700.0",
+    "uuid": "^11.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0",
+    "fast-check": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

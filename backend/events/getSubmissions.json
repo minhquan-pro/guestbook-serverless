@@ -1,0 +1,52 @@
+{
+  "resource": "/submissions",
+  "path": "/submissions",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "application/json",
+    "Host": "api.example.com",
+    "User-Agent": "Mozilla/5.0",
+    "X-Forwarded-For": "127.0.0.1",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": ["application/json"]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "def456",
+    "resourcePath": "/submissions",
+    "httpMethod": "GET",
+    "extendedRequestId": "def456-extended",
+    "requestTime": "15/Jan/2024:10:35:00 +0000",
+    "path": "/Prod/submissions",
+    "accountId": "123456789012",
+    "protocol": "HTTP/1.1",
+    "stage": "Prod",
+    "domainPrefix": "api",
+    "requestTimeEpoch": 1705311300000,
+    "requestId": "d7af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "127.0.0.1",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0",
+      "user": null
+    },
+    "domainName": "api.example.com",
+    "apiId": "1234567890"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

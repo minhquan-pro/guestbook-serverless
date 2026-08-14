@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Test Lambda on Save",
+  "description": "Chạy toàn bộ vitest suite (unit + property) mỗi khi lưu file source của Lambda trong backend/src. Suite chạy ~1s nên không làm chậm workflow.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend/src/**/*.mjs"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd backend && npm test",
+    "timeout": 120
+  }
+}

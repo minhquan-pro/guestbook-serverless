@@ -1,0 +1,54 @@
+{
+  "resource": "/submit",
+  "path": "/submit",
+  "httpMethod": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Host": "api.example.com",
+    "User-Agent": "Mozilla/5.0",
+    "X-Forwarded-For": "127.0.0.1",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Content-Type": ["application/json"],
+    "Accept": ["application/json"]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "abc123",
+    "resourcePath": "/submit",
+    "httpMethod": "POST",
+    "extendedRequestId": "abc123-extended",
+    "requestTime": "15/Jan/2024:10:30:00 +0000",
+    "path": "/Prod/submit",
+    "accountId": "123456789012",
+    "protocol": "HTTP/1.1",
+    "stage": "Prod",
+    "domainPrefix": "api",
+    "requestTimeEpoch": 1705311000000,
+    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "127.0.0.1",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0",
+      "user": null
+    },
+    "domainName": "api.example.com",
+    "apiId": "1234567890"
+  },
+  "body": "{\"name\":\"Nguyễn Văn A\",\"email\":\"nguyenvana@example.com\",\"note\":\"Tôi sẽ đến sớm 30 phút\"}",
+  "isBase64Encoded": false
+}

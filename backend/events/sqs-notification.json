@@ -1,0 +1,20 @@
+{
+  "Records": [
+    {
+      "messageId": "059f36b4-87a3-44ab-83d2-661975830a7d",
+      "receiptHandle": "AQEBwJnKyrHigUMZj6rYigCgxlaS3SLy0a...",
+      "body": "{\"submissionId\":\"550e8400-e29b-41d4-a716-446655440000\",\"name\":\"Nguyễn Văn A\",\"email\":\"nguyenvana@example.com\",\"note\":\"Tôi sẽ đến sớm 30 phút\",\"submittedAt\":\"2024-01-15T10:30:00.000Z\"}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1705311060000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1705311061000"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "e4e68fb7bd0e697a0ae8f1bb342846b3",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:guestbook-sqs-notification",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}

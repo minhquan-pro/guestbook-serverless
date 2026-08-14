@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Pre-Deploy Checklist",
+  "description": "Bấm để chạy checklist trước khi sam deploy: test suite, sam validate --lint, kiểm tra 3 SSM parameter, và độ sâu DLQ.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "set -e; cd backend; echo \"=== 1/4 Tests ===\"; npm test; echo \"=== 2/4 sam validate --lint ===\"; sam validate --lint --region us-east-1; echo \"=== 3/4 SSM parameters (/guestbook) ===\"; aws ssm get-parameters-by-path --path /guestbook --region us-east-1 --query 'Parameters[].{Name:Name,Value:Value}' --output table; echo \"=== 4/4 DLQ depth (0 la tot) ===\"; set +e; DLQ_URL=\"$(aws cloudformation describe-stacks --stack-name guestbook-serverless --region us-east-1 --query 'Stacks[0].Outputs[?OutputKey==`NotificationQueueUrl`].OutputValue' --output text 2>/dev/null)-dlq\"; aws sqs get-queue-attributes --region us-east-1 --queue-url \"$DLQ_URL\" --attribute-names ApproximateNumberOfMessages --query 'Attributes.ApproximateNumberOfMessages' --output text || echo \"Bo qua: stack chua deploy hoac khong doc duoc DLQ\"; echo \"=== Checklist xong ===\"",
+    "timeout": 300
+  }
+}

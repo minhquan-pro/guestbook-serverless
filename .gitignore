@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# SAM build artifacts
+.aws-sam/
+
+# SAM deploy config (stack name, region, S3 bucket)
+samconfig.toml
+
+# Next.js build output
+.next/
+out/
+next-env.d.ts
+
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

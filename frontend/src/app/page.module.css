@@ -1,0 +1,220 @@
+/* === Page Layout === */
+.container {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Header === */
+.header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.themeToggleWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* === Theme Toggle (secondary, never teal-filled — Req 9.6) === */
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.themeToggle:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--accent-on-surface);
+  outline-offset: 2px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--accent-on-surface);
+  font-family: var(--font-heading);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* === Two-Column Grid === */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Card === */
+.card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* === Form === */
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent-on-surface);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* === Submit Button (Primary CTA) === */
+.submitBtn {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: var(--accent-primary);
+  color: var(--accent-primary-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* === Empty State === */
+.emptyState {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* === Submissions List === */
+.submissionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.submissionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.submissionName {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.submissionNote {
+  flex: 2;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statusBadge {
+  background-color: var(--accent-secondary);
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* === Loading State === */
+.loading {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* === Error Message === */
+.error {
+  color: #EF4444;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  padding: 8px 12px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}

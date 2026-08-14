@@ -1,0 +1,43 @@
+{
+  "Records": [
+    {
+      "eventID": "1a2b3c4d5e6f7g8h9i0j",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1705311000,
+        "Keys": {
+          "submissionId": {
+            "S": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        },
+        "NewImage": {
+          "submissionId": {
+            "S": "550e8400-e29b-41d4-a716-446655440000"
+          },
+          "name": {
+            "S": "Nguyễn Văn A"
+          },
+          "email": {
+            "S": "nguyenvana@example.com"
+          },
+          "note": {
+            "S": "Tôi sẽ đến sớm 30 phút"
+          },
+          "submittedAt": {
+            "S": "2024-01-15T10:30:00.000Z"
+          },
+          "status": {
+            "S": "RECEIVED"
+          }
+        },
+        "SequenceNumber": "111",
+        "SizeBytes": 256,
+        "StreamViewType": "NEW_IMAGE"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:123456789012:table/guestbook-dynamodb-entries/stream/2024-01-15T00:00:00.000"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Review SAM Template Changes",
+  "description": "Soát template.yaml sau khi sửa: IAM least-privilege, DLQ + maxReceiveCount, config qua SSM (không hardcode), tags đầy đủ, và các bẫy đã biết khiến deploy fail.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend/template.yaml"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "template.yaml vừa được sửa. Chạy `cd backend && sam validate --lint --region us-east-1`, rồi đọc template và kiểm tra các điểm sau, báo cáo ngắn gọn chỉ những gì có vấn đề:\n\n1. IAM: mỗi Lambda vẫn có role riêng và least-privilege (SubmitForm chỉ PutItem, GetSubmissions chỉ Scan, StreamProcessor chỉ đọc Stream + SendMessage, Sender chỉ GetItem/UpdateItem + SES + SNS + đọc SSM). KHÔNG tự sửa IAM policy — chỉ báo cáo nếu thấy quyền bị nới rộng.\n2. SQS: NotificationQueue vẫn có RedrivePolicy trỏ tới DLQ với maxReceiveCount = 3; DLQ vẫn còn; CloudWatch Alarm trên DLQ messages > 0 vẫn còn.\n3. Config: không có admin email / SES domain / SES template name hardcode. Ba giá trị này phải đọc từ SSM Parameter Store (/guestbook/admin-email, /guestbook/ses-domain, /guestbook/ses-template-name).\n4. Tags: các resource khai báo trong template vẫn có đủ Name + Project + Env.\n5. Bẫy đã biết: nếu `Tags` bị thêm vào resource GuestbookEmailTemplate (AWS::SES::Template) thì CẢNH BÁO NGAY vì deploy sẽ fail — resource này không hỗ trợ property Tags.\n6. Sender VisibilityTimeout của queue vẫn >= timeout của Sender Lambda.\n\nNếu tất cả đều ổn, chỉ cần trả lời một dòng xác nhận."
+  }
+}
