@@ -1,29 +1,14 @@
 {
   "mcpServers": {
-    "aws-documentation": {
+    "aws-mcp": {
       "command": "uvx",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
-      "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_DOCUMENTATION_PARTITION": "aws"
-      },
-      "disabled": false,
-      "autoApprove": [
-        "search_documentation",
-        "read_documentation",
-        "read_sections",
-        "search_table",
-        "recommend"
-      ]
-    },
-    "cloudwatch": {
-      "command": "uvx",
-      "args": ["awslabs.cloudwatch-mcp-server@latest"],
-      "env": {
-        "AWS_PROFILE": "default",
-        "AWS_REGION": "us-east-1",
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      },
+      "timeout": 100000,
+      "transport": "stdio",
+      "args": [
+        "mcp-proxy-for-aws==1.6.4",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--metadata", "AWS_REGION=us-east-1"
+      ],
       "disabled": false,
       "autoApprove": []
     }
